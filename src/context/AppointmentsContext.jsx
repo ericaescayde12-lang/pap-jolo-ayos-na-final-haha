@@ -1,5 +1,6 @@
 import { createContext, useContext, useEffect, useState } from 'react'
 import { DEFAULT_CATALOG } from '../data/catalog.js'
+import { loadCatalog, saveCatalog } from './catalogStorage.js'
 
 const AppointmentsContext = createContext(null)
 const STORAGE_KEY = 'pap-jolo-appointments-fallback'
@@ -38,7 +39,10 @@ async function request(path, options = {}) {
 
 export function AppointmentsProvider({ children }) {
   const [appointments, setAppointments] = useState(() => readLocal(STORAGE_KEY, []))
-  const [catalog, setCatalog] = useState(() => readLocal(CATALOG_STORAGE_KEY, DEFAULT_CATALOG))
+  const [catalog, setCatalog] = useState(() => {
+    const local = readLocal(CATALOG_STORAGE_KEY, null)
+    return Array.isArray(local) && local.length > 0 ? local : DEFAULT_CATALOG
+  })
   const [dataReady, setDataReady] = useState(false)
   const [backendOnline, setBackendOnline] = useState(false)
 
@@ -51,7 +55,7 @@ export function AppointmentsProvider({ children }) {
           request('/appointments'),
         ])
         if (cancelled) return
-        setCatalog(Array.isArray(catalogData) ? catalogData : DEFAULT_CATALOG)
+        setCatalog(Array.isArray(catalogData) && catalogData.length > 0 ? catalogData : DEFAULT_CATALOG)
         setAppointments(Array.isArray(appointmentData) ? appointmentData : [])
         setBackendOnline(true)
       } catch (error) {

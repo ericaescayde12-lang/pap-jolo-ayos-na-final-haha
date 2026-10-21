@@ -5,7 +5,7 @@ const AuthContext = createContext(null)
 const SESSION_KEY = 'pap-jolo-local-session'
 // Add/change admin emails in .env as VITE_ADMIN_EMAILS=a@x.com,b@y.com
 // The screenshot/admin account supplied for this project is included by default.
-const ADMIN_EMAILS = (import.meta.env.VITE_ADMIN_EMAILS || 'adminerica@gmail.com,admin@papjolostudio.com')
+const ADMIN_EMAILS = (import.meta.env.VITE_ADMIN_EMAILS || 'adminerica@gmail.com,admin@papjolostudio.com,ericaescayde12@gmail.com')
   .split(',').map((email) => email.trim().toLowerCase()).filter(Boolean)
 
 export function isAdminEmail(email) {

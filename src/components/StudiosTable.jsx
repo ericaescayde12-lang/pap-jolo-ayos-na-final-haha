@@ -20,12 +20,20 @@ function StudiosTable() {
         return res.json();
       })
       .then((data) => {
+<<<<<<< HEAD
         console.log("Studios data from backend:", data);
+=======
+        console.log(" Studios data from backend:", data);
+>>>>>>> f3da9b1 (ready to deploy)
         setStudios(data);
         setLoading(false);
       })
       .catch((err) => {
+<<<<<<< HEAD
         console.error("Error fetching data:", err);
+=======
+        console.error(" Error fetching data:", err);
+>>>>>>> f3da9b1 (ready to deploy)
         setError(err.message);
         setLoading(false);
       });
@@ -54,6 +62,7 @@ function StudiosTable() {
 
       setisModalOpen(false);
     } catch (err) {
+<<<<<<< HEAD
       console.error("Error updating studio:", err);
       alert(err.message);
     }
@@ -75,6 +84,28 @@ function StudiosTable() {
       alert(err.message);
     }
   }
+=======
+      console.error(" Error updating studio:", err);
+      alert(err.message);
+    }
+
+    async function handleDelete(id) {
+      if (!window.confirm("Are you sure you want to delete this studio?")) return;  
+
+      try {
+        const response = await fetch(`${studios_url}/${id}`, {
+          method: "DELETE",
+        });
+
+        if (!response.ok) throw new Error("Failed to delete studio");
+
+        setStudios((prev) => prev.filter((s) => s.id !== Number(id)));
+      } catch (err) {
+        console.error(" Error deleting studio:", err);
+        alert(err.message);
+      }
+    }
+>>>>>>> f3da9b1 (ready to deploy)
 
   function openEditModal(studio) {
     setisModalOpen(true);
@@ -84,6 +115,10 @@ function StudiosTable() {
     seteditSpecialty(studio.specialty);
   }
 
+<<<<<<< HEAD
+=======
+  
+>>>>>>> f3da9b1 (ready to deploy)
   const overlayStyle = {
     position: "fixed",
     top: 0,
@@ -141,7 +176,11 @@ function StudiosTable() {
         </thead>
         <tbody>
           {studios.length === 0 ? (
+<<<<<<< HEAD
             <tr><td colSpan="4">No studios found</td></tr>
+=======
+            <tr><td colSpan="4"> No studios found</td></tr>
+>>>>>>> f3da9b1 (ready to deploy)
           ) : (
             studios.map((studio) => (
               <tr key={studio.id}>
@@ -149,6 +188,7 @@ function StudiosTable() {
                 <td>{studio.location}</td>
                 <td>{studio.specialty}</td>
                 <td>
+<<<<<<< HEAD
                   <button type="button" style={buttonStyle} onClick={() => openEditModal(studio)}>
                     Edit
                   </button>{" "}
@@ -156,6 +196,33 @@ function StudiosTable() {
                     Delete
                   </button>
                 </td>
+=======
+
+                <td>
+                  <button
+                    type="button"
+                    className="btn btn-outline-primary"
+                    onClick={() => openEditModal(studio)}
+                  >
+                    Edit
+                  </button>{" "}
+                  <button
+                    type="button"
+                    className="btn btn-outline-danger"
+                    onClick={() => handleDelete(studio.id)}
+                  >
+                    Delete
+                  </button>
+                </td>
+                  <button
+                    type="button"
+                    style={buttonStyle}
+                    onClick={() => openEditModal(studio)}
+                  >
+                    Edit
+                  </button>
+                </td>
+>>>>>>> f3da9b1 (ready to deploy)
               </tr>
             ))
           )}
@@ -211,6 +278,7 @@ function StudiosTable() {
       )}
     </div>
   );
+}
 }
 
 export default StudiosTable;

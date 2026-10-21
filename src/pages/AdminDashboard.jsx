@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react'
+import { useState, useRef, useCallback, useEffect } from 'react'
 import { useAppointments, SERVICES } from '../context/AppointmentsContext.jsx'
 
 function AdminDashboard() {
@@ -14,6 +14,20 @@ function AdminDashboard() {
 
   const [activeTab, setActiveTab] = useState('appointments')
   const [filter, setFilter] = useState('All')
+
+  // Toast notification state
+  const [toast, setToast] = useState({ show: false, message: '', type: 'success' })
+  const toastTimer = useRef(null)
+
+  const showToast = useCallback((message, type = 'success') => {
+    if (toastTimer.current) clearTimeout(toastTimer.current)
+    setToast({ show: true, message, type })
+    toastTimer.current = setTimeout(() => setToast({ show: false, message: '', type: 'success' }), 3000)
+  }, [])
+
+  useEffect(() => {
+    return () => { if (toastTimer.current) clearTimeout(toastTimer.current) }
+  }, [])
   const [catalogFilter, setCatalogFilter] = useState('All')
 
   // Add form state
@@ -99,6 +113,7 @@ function AdminDashboard() {
     setImagePreview('')
     if (fileInputRef.current) fileInputRef.current.value = ''
     setShowAddForm(false)
+    showToast('Done! New display has been posted successfully.')
   }
 
   function startEditing(item) {
@@ -123,6 +138,7 @@ function AdminDashboard() {
     })
 
     setEditingItem(null)
+    showToast('Done! Display has been updated successfully.')
   }
 
   const filteredAppointments =
@@ -163,6 +179,42 @@ function AdminDashboard() {
 
   return (
     <div className="bg-studio-black" style={{ minHeight: '100vh' }}>
+
+      {/* SUCCESS TOAST NOTIFICATION */}
+      {toast.show && (
+        <div
+          style={{
+            position: 'fixed',
+            top: '20px',
+            left: '50%',
+            transform: 'translateX(-50%)',
+            zIndex: 9999,
+            minWidth: '320px',
+            maxWidth: '500px',
+            animation: 'fadeInDown 0.35s ease',
+          }}
+        >
+          <div
+            className="d-flex align-items-center gap-2 px-4 py-3 rounded-3 shadow-lg"
+            style={{
+              background: toast.type === 'success' ? '#1a3a1a' : '#3a1a1a',
+              border: toast.type === 'success' ? '1px solid #2d6b2d' : '1px solid #6b2d2d',
+              color: '#ffffff',
+            }}
+          >
+            <i
+              className={`bi ${toast.type === 'success' ? 'bi-check-circle-fill text-success' : 'bi-exclamation-circle-fill text-danger'}`}
+              style={{ fontSize: '1.3rem' }}
+            ></i>
+            <span className="fw-semibold" style={{ fontSize: '0.95rem' }}>{toast.message}</span>
+            <button
+              className="btn-close btn-close-white ms-auto"
+              style={{ fontSize: '0.65rem' }}
+              onClick={() => setToast({ show: false, message: '', type: 'success' })}
+            ></button>
+          </div>
+        </div>
+      )}
 
       <div className="container-fluid responsive-content page-content-admin mb-5">
         <div className="d-flex align-items-center justify-content-between mb-3">
@@ -309,7 +361,7 @@ function AdminDashboard() {
                                 {!isAccepted && (
                                   <button
                                     className="btn btn-outline-light"
-                                    onClick={() => updateAppointmentStatus(a.id, 'accepted')}
+                                    onClick={() => { updateAppointmentStatus(a.id, 'accepted'); showToast('Done! Appointment accepted successfully.') }}
                                     title="Accept Appointment"
                                   >
                                     <i className="bi bi-check-lg me-1"></i>Accept
@@ -318,7 +370,7 @@ function AdminDashboard() {
                                 {!isDeclined && (
                                   <button
                                     className="btn btn-outline-secondary text-white"
-                                    onClick={() => updateAppointmentStatus(a.id, 'declined')}
+                                    onClick={() => { updateAppointmentStatus(a.id, 'declined'); showToast('Done! Appointment declined.', 'error') }}
                                     title="Decline Appointment"
                                   >
                                     <i className="bi bi-x-lg me-1"></i>Decline
@@ -329,6 +381,7 @@ function AdminDashboard() {
                                   onClick={() => {
                                     if (window.confirm(`Delete appointment for "${a.name}"?`)) {
                                       cancelAppointment(a.id)
+                                      showToast('Done! Appointment deleted successfully.')
                                     }
                                   }}
                                   title="Delete Finished Appointment"
@@ -446,7 +499,11 @@ function AdminDashboard() {
 
                       <div className="col-12 col-md-6">
                         <label className="form-label small text-studio-muted fw-semibold">
+<<<<<<< HEAD
                           Or Paste Image URL / Photo
+=======
+                          Or Paste Image URL
+>>>>>>> f3da9b1 (ready to deploy)
                         </label>
                         <input
                           type="text"
@@ -556,11 +613,19 @@ function AdminDashboard() {
                             </div>
 
                             <div className="mb-2">
+<<<<<<< HEAD
                               <label className="form-label small text-studio-muted">Image URL / Paste Photo</label>
                               <input
                                 type="text"
                                 className="form-control form-control-sm"
                                 placeholder="Paste link or press Ctrl+V to paste a copied photo"
+=======
+                              <label className="form-label small text-studio-muted">Image URL</label>
+                              <input
+                                type="text"
+                                className="form-control form-control-sm"
+                                placeholder="Paste image URL here"
+>>>>>>> f3da9b1 (ready to deploy)
                                 value={editImage.startsWith('data:') ? '' : editImage}
                                 onChange={(e) => setEditImage(e.target.value)}
                                 onPaste={(e) => handlePasteImage(e, true)}
@@ -657,6 +722,7 @@ function AdminDashboard() {
                                   onClick={() => {
                                     if (window.confirm(`Do you want to delete "${item.title}" from posted displays?`)) {
                                       deleteCatalogItem(item.id)
+                                      showToast('Done! Display has been deleted successfully.')
                                     }
                                   }}
                                 >

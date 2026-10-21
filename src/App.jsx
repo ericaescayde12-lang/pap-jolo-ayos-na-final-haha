@@ -72,17 +72,17 @@ export default function App() {
           }
         />
 
-        {/* Protected User Routes */}
+       
         <Route path="/dashboard" element={<RequireAuth role="user"><Dashboard /></RequireAuth>} />
         <Route path="/book" element={<RequireAuth role="user"><BookAppointment /></RequireAuth>} />
         <Route path="/appointments" element={<RequireAuth role="user"><MyAppointments /></RequireAuth>} />
         <Route path="/profile" element={<RequireAuth role="user"><Profile /></RequireAuth>} />
-        <Route path="/studiotable"  element={<StudiosTable/>} />
+        <Route path="/studiotable" element={<StudiosTable />} />
         
-        {/* Protected Admin Routes */}
+        
         <Route path="/admin" element={<RequireAuth role="admin"><AdminDashboard /></RequireAuth>} />
 
-        {/* Fallback 404 */}
+       
         <Route path="*" element={<NotFound />} />
       </Routes>
       {user?.role === 'user' && <Footer />}
