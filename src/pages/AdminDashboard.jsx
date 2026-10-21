@@ -49,6 +49,34 @@ function AdminDashboard() {
     reader.readAsDataURL(file)
   }
 
+  // Paste a copied photo (screenshot / "Copy Image") straight into the Image URL field.
+  // If the clipboard only has text (a link), the normal paste still works.
+  function handlePasteImage(e, isEdit = false) {
+    const items = e.clipboardData && e.clipboardData.items
+    if (!items) return
+
+    for (let i = 0; i < items.length; i++) {
+      if (items[i].type.indexOf('image') !== -1) {
+        const file = items[i].getAsFile()
+        if (!file) continue
+
+        e.preventDefault()
+        const reader = new FileReader()
+        reader.onloadend = () => {
+          if (isEdit) {
+            setEditImage(reader.result)
+          } else {
+            setNewImage(reader.result)
+            setImagePreview(reader.result)
+          }
+        }
+        reader.readAsDataURL(file)
+        return
+      }
+    }
+    // No image in clipboard -> let the browser paste the text/link normally
+  }
+
   function handleCreateCatalogItem(e) {
     e.preventDefault()
     if (!newTitle.trim() || !newPrice) {
@@ -418,18 +446,24 @@ function AdminDashboard() {
 
                       <div className="col-12 col-md-6">
                         <label className="form-label small text-studio-muted fw-semibold">
-                     x``
+                          Or Paste Image URL / Photo
                         </label>
                         <input
-                          type="url"
+                          type="text"
                           className="form-control"
-                          placeholder="https://images.unsplash.com/..."
+                          placeholder="Paste link or press Ctrl+V to paste a copied photo"
                           value={newImage.startsWith('data:') ? '' : newImage}
                           onChange={(e) => {
                             setNewImage(e.target.value)
                             setImagePreview(e.target.value)
                           }}
+                          onPaste={(e) => handlePasteImage(e, false)}
                         />
+                        {newImage.startsWith('data:') && (
+                          <small className="text-studio-muted d-block mt-1">
+                            <i className="bi bi-check-circle me-1"></i>Photo pasted/uploaded
+                          </small>
+                        )}
                       </div>
 
                       {imagePreview && (
@@ -522,23 +556,42 @@ function AdminDashboard() {
                             </div>
 
                             <div className="mb-2">
-                             <label className="form-label small text-studio-muted">Image URL</label>
+                              <label className="form-label small text-studio-muted">Image URL / Paste Photo</label>
                               <input
-                                type="url"
+                                type="text"
                                 className="form-control form-control-sm"
+                                placeholder="Paste link or press Ctrl+V to paste a copied photo"
                                 value={editImage.startsWith('data:') ? '' : editImage}
                                 onChange={(e) => setEditImage(e.target.value)}
+                                onPaste={(e) => handlePasteImage(e, true)}
                               />
+                              {editImage.startsWith('data:') && (
+                                <small className="text-studio-muted d-block mt-1">
+                                  <i className="bi bi-check-circle me-1"></i>Photo pasted/uploaded
+                                </small>
+                              )}
                             </div>
+
+                            {editImage && (
+                              <div className="mb-2 text-center">
+                                <img
+                                  src={editImage}
+                                  alt="Preview"
+                                  className="rounded border border-studio"
+                                  style={{ height: '100px', objectFit: 'cover' }}
+                                />
+                              </div>
+                            )}
 
                             <div className="mb-3">
                               <label className="form-label small text-studio-muted">Short Description</label>
                               <textarea
                                 className="form-control form-control-sm"
                                 rows="2"
+                                placeholder="say something..."
                                 value={editDescription}
                                 onChange={(e) => setEditDescription(e.target.value)}
-                              >say something...</textarea>
+                              ></textarea>
                             </div>
 
                             <div className="d-flex justify-content-end gap-2">

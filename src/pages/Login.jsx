@@ -75,6 +75,7 @@ function Login({ onLogin, onRegister, onGoogleLogin, isModal = false, onClose })
           <i className="bi bi-droplet-half text-white" />
         </span>
       </div>
+      <h1>ahsashjahdjbcd</h1>
 
       <h1 className="text-center mb-1 fs-3 fw-bold text-white">PAP's Jolo Studio</h1>
       <p className="text-center mb-4 text-studio-muted small">
