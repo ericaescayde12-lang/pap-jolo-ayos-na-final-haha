@@ -1,0 +1,377 @@
+{
+  "catalog": [
+    {
+      "id": "tat-1",
+      "category": "Tattoo",
+      "title": "Lettering Tattoo",
+      "price": 5000,
+      "image": "/uploads/img-1792553922586-0setb4.png",
+      "description": "",
+      "updatedAt": "2026-10-20T14:30:50.425Z"
+    },
+    {
+      "id": "tat-2",
+      "category": "Tattoo",
+      "title": "Skull Mandala",
+      "price": 15000,
+      "image": "/uploads/img-1792553922591-p2ssqr.png",
+      "description": "",
+      "updatedAt": "2026-10-20T14:30:06.414Z"
+    },
+    {
+      "id": "tat-3",
+      "category": "Tattoo",
+      "title": "Half Back",
+      "price": 8000,
+      "image": "/uploads/img-1792553922596-3emdrz.png",
+      "description": "",
+      "updatedAt": "2026-10-20T14:29:27.493Z"
+    },
+    {
+      "id": "tat-4",
+      "category": "Tattoo",
+      "title": "Cruise Snake",
+      "price": 5500,
+      "image": "/uploads/img-1792553922600-9v9qhr.png",
+      "description": "",
+      "updatedAt": "2026-10-20T14:26:34.858Z"
+    },
+    {
+      "id": "tat-5",
+      "category": "Tattoo",
+      "title": "Plain Band and Arm Band Tattoo",
+      "price": 3000,
+      "image": "/uploads/img-1792553922602-3kn9wh.png",
+      "description": "",
+      "updatedAt": "2026-10-20T14:25:55.933Z"
+    },
+    {
+      "id": "tat-6",
+      "category": "Tattoo",
+      "title": "Full Back Tattoo",
+      "price": 20000,
+      "image": "/uploads/img-1792553922605-dpxfmz.png",
+      "description": "",
+      "updatedAt": "2026-10-20T14:24:27.919Z"
+    },
+    {
+      "id": "tat-7",
+      "category": "Tattoo",
+      "title": "Full Sleeve",
+      "price": 12000,
+      "image": "/uploads/img-1792553922607-0urtha.png",
+      "description": "",
+      "updatedAt": "2026-10-20T14:23:29.217Z"
+    },
+    {
+      "id": "tat-8",
+      "category": "Tattoo",
+      "title": "Tribal",
+      "price": 5000,
+      "image": "/uploads/img-1792553922612-15xzeb.png",
+      "description": "",
+      "updatedAt": "2026-10-20T14:22:49.024Z"
+    },
+    {
+      "id": "tat-9",
+      "category": "Tattoo",
+      "title": "Dragon Tattoo",
+      "price": 8000,
+      "image": "/uploads/img-1792553922617-w4kcrm.png",
+      "description": "",
+      "updatedAt": "2026-10-20T14:22:05.547Z"
+    },
+    {
+      "id": "tat-10",
+      "category": "Tattoo",
+      "title": "Minimalist Fine Line",
+      "price": 5000,
+      "image": "/uploads/img-1792553922620-3hzc54.png",
+      "description": "",
+      "updatedAt": "2026-10-20T14:21:01.472Z"
+    },
+    {
+      "id": "tat-11",
+      "category": "Tattoo",
+      "title": "Japanese Dragon Sleeve",
+      "price": 10000,
+      "image": "/uploads/img-1792553922623-6rldtt.png",
+      "description": "",
+      "updatedAt": "2026-10-20T14:27:02.255Z"
+    },
+    {
+      "id": "tat-12",
+      "category": "Tattoo",
+      "title": "Floral Blackwork",
+      "price": 3200,
+      "image": "/uploads/img-1792553922626-hbuld4.png",
+      "description": "",
+      "updatedAt": "2026-10-20T14:18:54.795Z"
+    },
+    {
+      "id": "pie-1",
+      "category": "Piercing",
+      "title": "Lip Piercing",
+      "price": 150,
+      "image": "/uploads/img-1792553922629-lsecxw.png",
+      "description": "",
+      "updatedAt": "2026-10-20T14:31:40.601Z"
+    },
+    {
+      "id": "pie-2",
+      "category": "Piercing",
+      "title": "Rook Piercing",
+      "price": 120,
+      "image": "/uploads/img-1792553922633-aqhnvo.png",
+      "description": "",
+      "updatedAt": "2026-10-20T14:32:26.992Z"
+    },
+    {
+      "id": "pie-3",
+      "category": "Piercing",
+      "title": "Lobe Stack",
+      "price": 120,
+      "image": "/uploads/img-1792553922638-h44qyc.png",
+      "description": "",
+      "updatedAt": "2026-10-20T14:33:14.295Z"
+    },
+    {
+      "id": "pie-4",
+      "category": "Piercing",
+      "title": "Snake Bite Piercing",
+      "price": 130,
+      "image": "/uploads/img-1792553922641-4id55f.png",
+      "description": "",
+      "updatedAt": "2026-10-20T14:34:01.473Z"
+    },
+    {
+      "id": "pie-5",
+      "category": "Piercing",
+      "title": "Helix Piercing",
+      "price": 150,
+      "image": "/uploads/img-1792553922645-5aq5ab.png",
+      "description": "",
+      "updatedAt": "2026-10-20T14:34:36.256Z"
+    },
+    {
+      "id": "pie-6",
+      "category": "Piercing",
+      "title": "Septum Piercing",
+      "price": 200,
+      "image": "/uploads/img-1792553922648-hpoytu.png",
+      "description": "",
+      "updatedAt": "2026-10-20T14:35:08.386Z"
+    },
+    {
+      "id": "pie-7",
+      "category": "Piercing",
+      "title": "Nostril Piercing",
+      "price": 150,
+      "image": "/uploads/img-1792553922650-vng5pj.png",
+      "description": "",
+      "updatedAt": "2026-10-20T14:35:52.278Z"
+    },
+    {
+      "id": "pie-8",
+      "category": "Piercing",
+      "title": "Industrial Piercing",
+      "price": 250,
+      "image": "/uploads/img-1792553922653-5p1bnd.png",
+      "description": "",
+      "updatedAt": "2026-10-20T14:36:22.953Z"
+    },
+    {
+      "id": "pie-9",
+      "category": "Piercing",
+      "title": "Tragus Piercing",
+      "price": 180,
+      "image": "/uploads/img-1792553922656-2l5cbv.png",
+      "description": "",
+      "updatedAt": "2026-10-20T14:37:14.328Z"
+    },
+    {
+      "id": "pie-10",
+      "category": "Piercing",
+      "title": "Daith Piercing",
+      "price": 180,
+      "image": "/uploads/img-1792553922659-0qno0k.png",
+      "description": "",
+      "updatedAt": "2026-10-20T14:37:47.056Z"
+    },
+    {
+      "id": "pie-11",
+      "category": "Piercing",
+      "title": "Navel Piercing",
+      "price": 300,
+      "image": "/uploads/img-1792553922661-cor8wx.png",
+      "description": "",
+      "updatedAt": "2026-10-20T14:38:46.708Z"
+    },
+    {
+      "id": "pie-12",
+      "category": "Piercing",
+      "title": "Eyebrow Piercing",
+      "price": 200,
+      "image": "/uploads/img-1792553922663-2ve9lg.png",
+      "description": "",
+      "updatedAt": "2026-10-20T14:39:17.883Z"
+    },
+    {
+      "id": "hai-1",
+      "category": "Haircut",
+      "title": "Asymmetrical Two-Block",
+      "price": 150,
+      "image": "/uploads/img-1792553922666-mwnbso.png",
+      "description": "",
+      "updatedAt": "2026-10-20T14:43:36.378Z"
+    },
+    {
+      "id": "hai-2",
+      "category": "Haircut",
+      "title": "Wolf Cut",
+      "price": 150,
+      "image": "/uploads/img-1792553922668-77nt24.png",
+      "description": "",
+      "updatedAt": "2026-10-20T14:46:42.494Z"
+    },
+    {
+      "id": "hai-3",
+      "category": "Haircut",
+      "title": "Two Block Cut",
+      "price": 150,
+      "image": "/uploads/img-1792553922671-6fnudh.png",
+      "description": "",
+      "updatedAt": "2026-10-20T14:47:46.849Z"
+    },
+    {
+      "id": "hai-4",
+      "category": "Haircut",
+      "title": "Curtain Hair / Middle Part",
+      "price": 100,
+      "image": "/uploads/img-1792553922674-zgcduf.png",
+      "description": "",
+      "updatedAt": "2026-10-20T14:49:11.610Z"
+    },
+    {
+      "id": "hai-5",
+      "category": "Haircut",
+      "title": "Low Fade",
+      "price": 200,
+      "image": "/uploads/img-1792553922676-6cprx2.png",
+      "description": "",
+      "updatedAt": "2026-10-20T14:50:09.441Z"
+    },
+    {
+      "id": "hai-6",
+      "category": "Haircut",
+      "title": "Mid Taper Fade",
+      "price": 250,
+      "image": "/uploads/img-1792553922679-0k567j.png",
+      "description": "",
+      "updatedAt": "2026-10-20T14:51:34.237Z"
+    },
+    {
+      "id": "hai-7",
+      "category": "Haircut",
+      "title": "French Crop",
+      "price": 250,
+      "image": "/uploads/img-1792553922681-w1shaf.png",
+      "description": "",
+      "updatedAt": "2026-10-20T14:53:05.509Z"
+    },
+    {
+      "id": "hai-8",
+      "category": "Haircut",
+      "title": "Mullet",
+      "price": 250,
+      "image": "/uploads/img-1792553922684-avjq9s.png",
+      "description": "",
+      "updatedAt": "2026-10-20T14:54:21.222Z"
+    },
+    {
+      "id": "hai-9",
+      "category": "Haircut",
+      "title": "Buzz Cut",
+      "price": 180,
+      "image": "/uploads/img-1792553922688-4ios48.png",
+      "description": "",
+      "updatedAt": "2026-10-20T14:55:00.752Z"
+    },
+    {
+      "id": "hai-10",
+      "category": "Haircut",
+      "title": "High Taper Fade",
+      "price": 150,
+      "image": "/uploads/img-1792553922691-mjixl9.png",
+      "description": "",
+      "updatedAt": "2026-10-20T14:56:16.296Z"
+    }
+  ],
+  "appointments": [
+    {
+      "id": "appt-1792554801974",
+      "name": "Erica Escayde",
+      "date": "2026-10-22",
+      "service": "Tattoo",
+      "design": "Floral Blackwork",
+      "price": 3200,
+      "bookedBy": "ericaescayde15@gmail.com",
+      "userId": "oRAcQW2KqLTVnSXZcwn3xzCOCU03",
+      "status": "declined",
+      "createdAt": "2026-10-21T03:53:21.974Z",
+      "updatedAt": "2026-10-21T03:54:10.828Z"
+    }
+  ],
+  "users": [
+    {
+      "uid": "2mOWgzX1kbQchT2GiwxPeozvxPd2",
+      "email": "adminerica@gmail.com",
+      "name": "adminerica",
+      "role": "admin",
+      "provider": "google",
+      "photoURL": "",
+      "createdAt": "2026-09-24T09:29:26.136Z",
+      "lastLogin": "2026-10-21T03:53:12.116Z"
+    },
+    {
+      "uid": "8jIkWSY0fFNFnBtYx3cUj2IlLA63",
+      "email": "ericaescayde12@gmail.com",
+      "name": "Erica Escayde",
+      "role": "admin",
+      "provider": "google",
+      "photoURL": "https://lh3.googleusercontent.com/a/ACg8ocIH30ww5K3yY2PK-S_QsiIRcOR-fNgbom41t39qmWfR9mdUPQ=s96-c",
+      "createdAt": "2026-09-24T09:30:01.922Z",
+      "lastLogin": "2026-10-21T05:50:06.917Z"
+    },
+    {
+      "uid": "oRAcQW2KqLTVnSXZcwn3xzCOCU03",
+      "email": "ericaescayde15@gmail.com",
+      "name": "Erica Escayde",
+      "role": "user",
+      "provider": "google",
+      "photoURL": "https://lh3.googleusercontent.com/a/ACg8ocLlkRutm28XFBtr4BFQL71-LCIpLyHVoEVmImPmeXTyuR7I-As=s96-c",
+      "createdAt": "2026-10-05T07:58:31.375Z",
+      "lastLogin": "2026-10-21T03:52:45.500Z"
+    }
+  ],
+  "studios": [
+    {
+      "id": 1,
+      "name": "PAP's Jolo Studio",
+      "location": "Roxas",
+      "specialty": "Tattoo, Piercing & Haircut"
+    },
+    {
+      "id": 2,
+      "name": "Jolo Tattoo Room",
+      "location": "Palayan",
+      "specialty": "Tattoo Designs"
+    },
+    {
+      "id": 3,
+      "name": "Jolo Grooming Corner",
+      "location": "Paclasan",
+      "specialty": "Haircut & Styling"
+    }
+  ]
+}
