@@ -9,7 +9,8 @@
     "preview": "vite preview",
     "dev:frontend": "vite",
     "backend": "node backend/server.js",
-    "start": "vite build && node backend/server.js"
+    "start": "vite build && node backend/server.js",
+    "postinstall": "cd backend && npm install"
   },
   "dependencies": {
     "bootstrap": "^5.3.8",
